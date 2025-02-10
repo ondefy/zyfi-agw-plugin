@@ -16,12 +16,12 @@ jobs:
           version: 9
           run_install: false
 
-      - name: Use Node LTS ✨
-        uses: actions/setup-node@v4
+      - name: Install Node.js
+        uses: actions/setup-node@v3
         with:
-          node-version: lts/*
-          registry-url: https://registry.npmjs.org
+          node-version-file: '.nvmrc'
           cache: pnpm
+          registry-url: https://registry.npmjs.org
 
       - name: Install dependencies 📦️
         run: pnpm install --frozen-lockfile
