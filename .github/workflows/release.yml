@@ -10,9 +10,11 @@ jobs:
       - name: Checkout 🛎️
         uses: actions/checkout@v4
 
-      - uses: pnpm/action-setup@v4
+      - uses: pnpm/action-setup@v2
+        name: Install pnpm
         with:
-          version: 0
+          version: 8
+          run_install: false
 
       - name: Use Node LTS ✨
         uses: actions/setup-node@v4
