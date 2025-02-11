@@ -38,11 +38,14 @@ export function createZyfiPaymaster(
   return async function zyfiPaymaster(
     args: CustomPaymasterParameters
   ): Promise<any> {
-    let url = params.apiUrl ?? ERC20_PAYMASTER;
+    let url = ERC20_PAYMASTER;
     if (params.generalFlow) {
       url = GENERAL_FLOW_PAYMASTER;
     } else if (params.sponsorshipRatio !== undefined) {
       url = SPONSORED_PAYMASTER;
+    }
+    if (params.apiUrl) {
+      url = url.replace(ZYFI_ENDPOINT, params.apiUrl);
     }
     const payload = {
       replayLimit: params.replayLimit,
