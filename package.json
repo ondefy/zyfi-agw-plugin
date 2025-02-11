@@ -1,6 +1,6 @@
 {
   "name": "zyfi-agw-plugin",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "ZyFi's paymaster handler for AGW",
   "main": "./lib/index.js",
   "files": [
